@@ -15,7 +15,10 @@ import {map} from "rxjs/operators";
 })
 export class AppComponent implements OnInit{
 
-  constructor(private httpClient:HttpClient){}
+  constructor(private httpClient:HttpClient){
+   this.getWelcomeMessage();
+  }
+
 
   private baseURL:string='http://localhost:8080';
 
@@ -27,6 +30,7 @@ export class AppComponent implements OnInit{
   request!:ReserveRoomRequest;
   currentCheckInVal!:string;
   currentCheckOutVal!:string;
+  welcomeMessages!:string;
 
     ngOnInit(){
       this.roomsearch= new FormGroup({
@@ -79,10 +83,22 @@ export class AppComponent implements OnInit{
 
     getAll(): Observable<any> {
 
+      return this.httpClient.get(this.baseURL + '/room/reservation/v1?checkin='+ this.currentCheckInVal + '&checkout='+this.currentCheckOutVal, {responseType: 'json'});
 
-       return this.httpClient.get(this.baseURL + '/room/reservation/v1?checkin='+ this.currentCheckInVal + '&checkout='+this.currentCheckOutVal, {responseType: 'json'});
     }
 
+    getWelcomeMessages(): Observable<any> {
+      return this.httpClient.get(this.baseURL + '/api/messages/welcome-fr', {responseType: 'json'})
+    }
+
+  getWelcomeMessage() {
+    this.getWelcomeMessages()
+      .subscribe((response: any) => {
+        console.log(response);
+        this.welcomeMessages = response;
+        alert(JSON.stringify(response));
+        });
+  }
   }
 
 
