@@ -16,7 +16,8 @@ public class D387SampleCodeApplication {
 
 		try {
 			InputStream inputStream = new ClassPathResource("welcome_CA.properties").getInputStream();
-			String[] welcomeMessages = searchBundle.getWelcomeMessage(inputStream);
+			InputStream inputStream2 = new ClassPathResource("welcome_en_US.properties").getInputStream();
+			String[] welcomeMessages = searchBundle.getWelcomeMessage(inputStream, inputStream2);
 				for(String message : welcomeMessages) {
 					System.out.println(message);
 			}
@@ -24,15 +25,7 @@ public class D387SampleCodeApplication {
 			e.printStackTrace();
 		}
 
-		try {
-			InputStream inputStream = new ClassPathResource("welcome_en_US.properties").getInputStream();
-			String[] welcomeMessages = searchBundle.getWelcomeMessage(inputStream);
-				for(String message : welcomeMessages) {
-					System.out.println(message);
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+
 			/*
 		Properties properties=new Properties();
 		messageExecutor.execute(()-> {

@@ -19,15 +19,19 @@ public class MessageController {
     public String[] getWelcomeMessageFR() throws IOException {
         SearchBundle searchBundle = new SearchBundle();
         InputStream inputStream = new ClassPathResource("welcome_CA.properties").getInputStream();
-        return searchBundle.getWelcomeMessage(inputStream);
+        InputStream inputStream2 = new ClassPathResource("welcome_en_US.properties").getInputStream();
+        return searchBundle.getWelcomeMessage(inputStream,inputStream2);
 
     }
+    /*
     @GetMapping("/welcome-en")
     public String[] getWelcomeMessageEN() throws IOException {
         SearchBundle searchBundle = new SearchBundle();
         InputStream inputStream = new ClassPathResource("welcome_en_US.properties").getInputStream();
-        return searchBundle.getWelcomeMessage(inputStream);
+        return searchBundle.getWelcomeMessage(inputStream, inputStream2);
 
     }
+
+     */
 
 }
