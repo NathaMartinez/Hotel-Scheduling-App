@@ -15,12 +15,12 @@ import java.io.InputStream;
 @RequestMapping("/api/messages")
 public class MessageController {
 
-    @GetMapping("/welcome-fr")
-    public String[] getWelcomeMessageFR() throws IOException {
+    @GetMapping("/welcome")
+    public String[] getWelcomeMessage() throws IOException {
         SearchBundle searchBundle = new SearchBundle();
-        InputStream inputStream = new ClassPathResource("welcome_CA.properties").getInputStream();
-        InputStream inputStream2 = new ClassPathResource("welcome_en_US.properties").getInputStream();
-        return searchBundle.getWelcomeMessage(inputStream,inputStream2);
+        InputStream inputStreamFR = new ClassPathResource("welcome_CA.properties").getInputStream();
+        InputStream inputStreamEN = new ClassPathResource("welcome_en_US.properties").getInputStream();
+        return searchBundle.getWelcomeMessage(inputStreamFR,inputStreamEN);
 
     }
     /*

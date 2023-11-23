@@ -38,7 +38,7 @@ export class AppComponent implements OnInit{
         checkout: new FormControl(' ')
       });
 
- //     this.rooms=ROOMS;
+      this.rooms=ROOMS;
 
 
     const roomsearchValueChanges$ = this.roomsearch.valueChanges;
@@ -77,9 +77,9 @@ export class AppComponent implements OnInit{
         .subscribe(res => console.log(res));
     }
 
-  /*mapRoom(response:HttpResponse<any>): Room[]{
+  mapRoom(response:HttpResponse<any>): Room[]{
     return response.body;
-  }*/
+  }
 
     getAll(): Observable<any> {
 
@@ -88,7 +88,7 @@ export class AppComponent implements OnInit{
     }
 
     getWelcomeMessages(): Observable<any> {
-      return this.httpClient.get(this.baseURL + '/api/messages/welcome-fr', {responseType: 'json'})
+      return this.httpClient.get(this.baseURL + '/api/messages/welcome', {responseType: 'json'})
     }
 
   getWelcomeMessage() {
@@ -96,7 +96,7 @@ export class AppComponent implements OnInit{
       .subscribe((response: any) => {
         console.log(response);
         this.welcomeMessages = response;
-        alert(JSON.stringify(response));
+        //alert(JSON.stringify(response));
         });
   }
   }
@@ -133,7 +133,7 @@ export class ReserveRoomRequest {
   }
 }
 
-/*
+
 var ROOMS: Room[]=[
   {
   "id": "13932123",
@@ -153,5 +153,5 @@ var ROOMS: Room[]=[
   "price" :"40",
   "links" : ""
 }
-] */
+]
 

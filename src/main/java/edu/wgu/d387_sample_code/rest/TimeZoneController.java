@@ -1,0 +1,25 @@
+package edu.wgu.d387_sample_code.rest;
+
+import edu.wgu.d387_sample_code.language.SearchBundle;
+import edu.wgu.d387_sample_code.language.TimeZoneConverter;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Time;
+
+@CrossOrigin
+@RestController
+@RequestMapping("/api/time-zone")
+public class TimeZoneController {
+
+    @GetMapping("/time")
+    public String[] getTimeZone() throws IOException {
+        TimeZoneConverter timeZoneConverter = new TimeZoneConverter();
+    return timeZoneConverter.getTimeZone();
+    }
+}
