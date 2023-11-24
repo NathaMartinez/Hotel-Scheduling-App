@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 public class TimeZoneConverter {
     public String[] getTimeZone(){
         //String[] timeZoneArray = new String[3];
-        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("HH:mm");
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("hh:mm a");
 
 
         ZoneId zEastern = ZoneId.of("America/New_York");
