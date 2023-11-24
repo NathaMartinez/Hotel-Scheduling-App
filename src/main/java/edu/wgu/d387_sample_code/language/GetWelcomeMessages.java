@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
 @CrossOrigin
-public class SearchBundle {
+public class GetWelcomeMessages {
     public String[] getWelcomeMessage(InputStream inputStream, InputStream inputStream2) {
         Properties properties = new Properties();
         String[] welcomeArray = new String[2];

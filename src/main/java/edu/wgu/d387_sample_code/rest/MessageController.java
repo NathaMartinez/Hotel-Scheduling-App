@@ -1,6 +1,6 @@
 package edu.wgu.d387_sample_code.rest;
 
-import edu.wgu.d387_sample_code.language.SearchBundle;
+import edu.wgu.d387_sample_code.language.GetWelcomeMessages;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,21 +17,9 @@ public class MessageController {
 
     @GetMapping("/welcome")
     public String[] getWelcomeMessage() throws IOException {
-        SearchBundle searchBundle = new SearchBundle();
+        GetWelcomeMessages getWelcomeMessages = new GetWelcomeMessages();
         InputStream inputStreamFR = new ClassPathResource("welcome_CA.properties").getInputStream();
         InputStream inputStreamEN = new ClassPathResource("welcome_en_US.properties").getInputStream();
-        return searchBundle.getWelcomeMessage(inputStreamFR,inputStreamEN);
-
+        return getWelcomeMessages.getWelcomeMessage(inputStreamFR,inputStreamEN);
     }
-    /*
-    @GetMapping("/welcome-en")
-    public String[] getWelcomeMessageEN() throws IOException {
-        SearchBundle searchBundle = new SearchBundle();
-        InputStream inputStream = new ClassPathResource("welcome_en_US.properties").getInputStream();
-        return searchBundle.getWelcomeMessage(inputStream, inputStream2);
-
-    }
-
-     */
-
 }
