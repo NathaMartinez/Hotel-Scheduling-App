@@ -52,9 +52,9 @@ public class TimeZoneConverter {
 
         //Concatenate String
         String presentationMessage = "Join us for an online live presentation held at the Landon Hotel on December 1, 2023 at " +
-                formattedTimeEastern + " Eastern Time " +
-                formattedTimeMountain + " Mountain Time " +
-                formattedTimeUTC + " UTC.";
+                formattedTimeEastern + " Eastern Time | " +
+                formattedTimeMountain + " Mountain Time | " +
+                formattedTimeUTC + " UTC";
         return new String[]{presentationMessage};
     }
 }
