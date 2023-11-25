@@ -1,29 +1,25 @@
-<strong> **DO NOT DISTRIBUTE OR PUBLICLY POST SOLUTIONS TO THESE LABS. MAKE ALL FORKS OF THIS REPOSITORY WITH SOLUTION CODE PRIVATE. PLEASE REFER TO THE STUDENT CODE OF CONDUCT AND ETHICAL EXPECTATIONS FOR COLLEGE OF INFORMATION TECHNOLOGY STUDENTS FOR SPECIFICS. ** </strong>
+D387 - Advanced Java
+C1a. Build resource bundles for both English and French (languages required by Canadian law). Include a welcome message in the language resource bundles.
+File Name(s): welcome.properties; welcome_CA.properties; welcome_en_US.properties
+Line Number(s): none; 1; 1
+Changes: Build English and French resource bundles and include a welcome message for each language.
 
-# WESTERN GOVERNOR UNIVERSITY 
-## D387 – ADVANCED JAVA
-Welcome to Advanced Java! This is an opportunity for students to write multithreaded object-oriented code using Java frameworks and determine how to deploy software applications using cloud services.
+C1b. Display the welcome message in both English and French by applying the resource bundles using a different thread for each language.
+File Name(s): SearchBundle.java; WelcomeController.java; app.component.ts; app.component.html
+Line Number(s): 1-21; 1-32; 18-21,33,90-101; 19
+Changes: Create class to parse resource bundles and add to String array. Build REST controller to create endpoints for each message. Add method to fetch welcome message response from API endpoint. Display welcome messages in the frontend and update welcome messages.
 
-FOR SPECIFIC TASK INSTRUCTIONS AND REQUIREMENTS FOR THIS ASSESSMENT, PLEASE REFER TO THE COURSE PAGE.
-## BASIC INSTRUCTIONS
-For this assessment, you will modify a Spring application with a Java back end and an Angular front end to include multithreaded language translation, a message at different time zones, and currency exchange. Then, build a Docker image of the current multithreaded Spring application and containerize it using the supporting documents provided in this task.
+C2. Modify the front end to display the price for a reservation in currency rates for U.S. dollars ($), Canadian dollars (C$), and euros (€) on different lines.
+File Name(s): app.component.html
+Line Number(s): 80-82
+Changes: Display price for room reservations
 
+C3a. Write a Java method to convert times between eastern time (ET), mountain time (MT), and coordinated universal time (UTC) zones.
+File Name(s): TimeZoneConverter.java
+Line Number(s): 1-43
+Change(Copy from commits): create time zone conversion method
 
-## SUPPLEMENTAL RESOURCES 
-1.	How to clone a project to IntelliJ using Git?
-
-> Ensure that you have Git installed on your system and that IntelliJ is installed using [Toolbox](https://www.jetbrains.com/toolbox-app/). Make sure that you are using version 2022.3.2. Once this has been confirmed, click the clone button and use the 'IntelliJ IDEA (HTTPS)' button. This will open IntelliJ with a prompt to clone the proejct. Save it in a safe location for the directory and press clone. IntelliJ will prompt you for your credentials. Enter in your WGU Credentials and the project will be cloned onto your local machine.  
-
-2. How to create a branch and start Development?
-
-- GitLab method
-> Press the '+' button located near your branch name. In the dropdown list, press the 'New branch' button. This will allow you to create a name for your branch. Once the branch has been named, you can select 'Create Branch' to push the branch to your repository.
-
-- IntelliJ method
-> In IntelliJ, Go to the 'Git' button on the top toolbar. Select the new branch option and create a name for the branch. Make sure checkout branch is selected and press create. You can now add a commit message and push the new branch to the local repo.
-
-## SUPPORT
-If you need additional support, please navigate to the course page and reach out to your course instructor.
-## FUTURE USE
-Take this opportunity to create or add to a simple resume portfolio to highlight and showcase your work for future use in career search, experience, and education!
-
+C3b. Use the time zone conversion method from part C3a to display a message stating the time in all three times zones in hours and minutes for an online, live presentation held at the Landon Hotel. The times should be displayed as ET, MT, and UTC.
+File Name(s): TimeZoneConverter.java; TimeZoneController.java; app.component.ts, app.component.html
+Line Number(s): 6,10-12,19,20,26,29-31,36-51,53-58; 1-21; 20,35,91-102; 29-30
+Changes: Add formatted Eastern, Mountain, and Universal Time zones. Create REST controller for mapping API endpoints for the TimeZoneConverter class. Map array to an API endpoint. Create method to fetch presentation message from API endpoint, display message on home page.
