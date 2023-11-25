@@ -40,7 +40,7 @@ export class AppComponent implements OnInit{
         checkout: new FormControl(' ')
       });
 
-      this.rooms=ROOMS;
+      //this.rooms=ROOMS;
 
 
     const roomsearchValueChanges$ = this.roomsearch.valueChanges;
@@ -146,7 +146,7 @@ export class ReserveRoomRequest {
   }
 }
 
-
+/*
 var ROOMS: Room[]=[
   {
   "id": "13932123",
@@ -168,3 +168,5 @@ var ROOMS: Room[]=[
 }
 ]
 
+
+ */
